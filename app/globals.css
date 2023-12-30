@@ -2,26 +2,71 @@
 @tailwind components;
 @tailwind utilities;
 
-:root {
-  --foreground-rgb: 0, 0, 0;
-  --background-start-rgb: 214, 219, 220;
-  --background-end-rgb: 255, 255, 255;
+body {
+  font-family: "Inter", sans-serif;
+  background: #f9f9f9;
+  color: #000;
+  overflow-x: hidden;
 }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --foreground-rgb: 255, 255, 255;
-    --background-start-rgb: 0, 0, 0;
-    --background-end-rgb: 0, 0, 0;
+h1 {
+  color: #000;
+}
+
+p {
+  color: #686868;
+}
+
+h2 {
+  color: #000;
+}
+
+.nav {
+  background: #fff;
+  box-shadow: 0px 4px 20px 0px rgba(0, 0, 0, 0.1);
+}
+
+.gradRect {
+  background: linear-gradient(0deg, #000 -60.02%, rgba(0, 0, 0, 0) 100%);
+}
+
+.future {
+  background: linear-gradient(96deg, #4a88ff 4.02%, #af4aff 50.92%);
+  background-clip: text;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.recapBig {
+  background: linear-gradient(
+    180deg,
+    #fff 23.55%,
+    rgba(255, 255, 255, 0) 180.58%
+  );
+  background-clip: text;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+@keyframes slide {
+  0% {
+    transform: translateX(0);
+  }
+  100% {
+    transform: translateX(-100%);
   }
 }
 
-body {
-  color: rgb(var(--foreground-rgb));
-  background: linear-gradient(
-      to bottom,
-      transparent,
-      rgb(var(--background-end-rgb))
-    )
-    rgb(var(--background-start-rgb));
+.slide-container {
+  width: 100%; /* Adjust as needed */
+  overflow: hidden;
+}
+
+.slide-content {
+  display: flex;
+  animation: slide 20s linear infinite; /* Adjust duration and timing function as needed */
+}
+
+.slide-item {
+  flex: 0 0 auto;
 }
